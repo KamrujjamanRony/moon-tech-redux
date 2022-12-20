@@ -4,9 +4,9 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("product.json")
       .then((res) => res.json())
-      .then((data) => setProducts(data.data));
+      .then((data) => setProducts(data));
   });
 
   return (
@@ -40,7 +40,7 @@ const ProductList = () => {
             </thead>
 
             <tbody class='text-sm divide-y divide-gray-100'>
-              {products.map(({ model, brand, price, status, _id }) => (
+              {products.map(({ model, brand, price, status, id }) => (
                 <tr>
                   <td class='p-2'>
                     <input type='checkbox' class='w-5 h-5' value='id-1' />
