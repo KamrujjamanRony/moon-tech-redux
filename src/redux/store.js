@@ -3,9 +3,10 @@ import { composeWithDevTools } from "@redux-devtools/extension";
 import rootReducer from "./reducers/rootReducer";
 import logger from "redux-logger";
 import cartCounter from "./middleware/cartCounter";
+import thunk from "redux-thunk";
 
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(cartCounter , logger)));
+  composeWithDevTools(applyMiddleware(cartCounter , thunk , logger)));
 
 export default store;
