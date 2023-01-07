@@ -4,7 +4,7 @@ import ProductCard from "../../components/ProductCard";
 import { toggle, toggleBrands } from "../../features/filter/filterSlice";
 
 const Home = () => {
-  const dispatch = useDispatch();
+  
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -12,8 +12,8 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-
-  const activeClass = "text-white  bg-indigo-500 border-white";
+  const dispatch = useDispatch();
+  // const activeClass = "text-white  bg-indigo-500 border-white";
   /* let content;
   if(products.length){
       content = products.map((product) => (
