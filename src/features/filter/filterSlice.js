@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const initialState = {
   filter: {
     stock: false,
@@ -9,18 +10,21 @@ const initialState = {
 };
 
 const filterSlice = createSlice({
-  name: "cart",
+  name: "filter",
   initialState,
   reducers: {
     toggle: (state) => {
-      state.stock = !state.stock;
+      state.filter.stock = !state.filter.stock;
     },
 
     toggleBrands: (state, action) => {
-      if(!state.brands.includes(action.payload)){
-        state.brands.push(action.payload)
+      console.log("hi")
+      if(!state.filter.brands.includes(action.payload)){
+        state.filter.brands.push(action.payload);
       } else{
-        state.brands = state.brands.filter((brand) => brand !== action.payload);
+        state.filter.brands = state.filter.brands.filter(
+          (brand) => brand !== action.payload
+        );
       }
     },
   },

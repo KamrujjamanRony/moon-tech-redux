@@ -6,4 +6,5 @@ export const store = configureStore({
     carts: cartSlice,
     filters: filterSlice,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
